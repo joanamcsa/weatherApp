@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import store from './redux/store.js';
+import {LoadCities} from './components/LoadCities';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  static get properties() {
+    return {
+      images: {type: Object},
+      city: {type: Object},
+    };
+  }
+
+  constructor() {
+    super();
+    this.city=[];
+  }
+
+  stateChanged(state) {
+    this.city = state.cities;
+    console.log(this.city)
+  }
+
+  componentDidMount() {
+    
+    this.city = store.getState().cities;
+
+  }
+
+  render() {
+    console.log("estou no render")
+    return (
+      <div>
+        <h1>Current Weather </h1>
+        <LoadCities />
+      
+      </div>
+    );
+    
+  }
 }
 
 export default App;
