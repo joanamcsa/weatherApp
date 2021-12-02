@@ -6,6 +6,8 @@ import SmallBox from "./SmallBox";
 import ItemList from "./ItemList";
 import SearchBar from "./SearchBar";
 import { store } from 'react-notifications-component';
+import CountryCodes from "./data/CountryCodes.json";
+
 
 export class LoadCities extends Component {
     state = {
@@ -22,9 +24,12 @@ export class LoadCities extends Component {
       apiKey: {type: String},
       apiURL: {type: String},
       name:{type: String},
+      code:{type: String},
     };
   }
   
+
+
   constructor() {
     super();
     this.location={};
@@ -35,6 +40,7 @@ export class LoadCities extends Component {
         this.setState({city: this.state.weather[0]})
     }
     this.name="";
+    this.code="";
     this.importAll()
   }
 
@@ -60,6 +66,7 @@ export class LoadCities extends Component {
   }
   
   componentDidMount() {
+    
     
     var _this = this;
     if(localStorage.getItem('weather') && localStorage.getItem('weather')!=="" ){
@@ -105,6 +112,7 @@ export class LoadCities extends Component {
         _this.setState({coord: _this.state.coord});
 
         _this.name = data.name;
+        _this.code = data.sys.country;
 
     })
   
@@ -121,6 +129,7 @@ export class LoadCities extends Component {
     .then((data) => {
         if(!data.cod){
           data.name = _this.name;
+          data.country = _this.code;
 
           if(_this.state.weather.length !== 0) {
               _this.state.weather.forEach((element,index) => {
@@ -154,21 +163,43 @@ export class LoadCities extends Component {
     }
 
     addCity = (name) => {
+      console.log(CountryCodes["Portugal"]);
+      this.code ="";
+
+      if(name !== ""){
+        if(name.split(",").length > 1){
+
+          var str = name.split(",")[1].trim().toLowerCase();
+          var arr = str.split(" ");
+          var country="";
+
+          if(arr.length > 1){
+            for (var i = 0; i < arr.length; i++) {
+              arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+            }
+            country = arr.join(" ");
+          } else {
+            country = str.charAt(0).toUpperCase() + str.slice(1);
+          }
+          this.code = CountryCodes[country];
+        }
+
         var _this=this;
-        fetch(`${this.apiURL}/weather?q=${name}&appid=${this.apiKey}&units=metric&lang=pt`)
+        fetch(`${this.apiURL}/weather?q=${name},${this.code}&appid=${this.apiKey}&units=metric&lang=pt`)
         .then(res => res.json())
         .then((data) => {
 
-            if(data.cod === 200){
+            if(data.cod === "200" || data.cod===200){
 
                 _this.name = data.name;
+                _this.code = data.sys.country;
                 _this.location.lat = data.coord.lat;
                 _this.location.lon = data.coord.lon;
                 
                 _this.callApiForecastWeather();
                 this.notificationCity(`${data.name} is now showing`, "success");
             }
-            else if(data.cod === 404){
+            else if(data.cod === 404 || data.cod === "404"){
                 this.notificationCity(`${name} not found. Please try again.`, "danger");
             }
             else {
@@ -177,6 +208,11 @@ export class LoadCities extends Component {
             }
           })
           .catch(console.log)
+        }
+        else {
+          this.notificationCity(`Empty value. Please enter a city name.`, "danger");
+            
+        }
 
     }
 

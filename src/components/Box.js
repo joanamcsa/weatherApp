@@ -1,27 +1,9 @@
 import React, { Component } from "react";
-import store1 from '../redux/store.js';
 import '../App.css';
 
 
 export class Box extends Component {
-    state = {
-        weather: [],
-    }
-    static get properties() {
-        return {
-           
-        };
-    }
-    
-    constructor() {
-        super();
-        this.setState({weather: store1.getState().cities});
-    }
-    
-    componentDidMount(){
-
-    }
-
+   
     render() {
         return (
             <div>
