@@ -9,6 +9,9 @@ import {CITIES} from '../constants/action-types.js';
         case CITIES:
             state.cities = action.payload;
             break;
+        default: 
+            void(0);
+        break;
     }
     return state;
   }

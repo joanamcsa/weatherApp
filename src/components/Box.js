@@ -1,18 +1,21 @@
 import React, { Component } from "react";
+import store1 from '../redux/store.js';
 import '../App.css';
 
 
 export class Box extends Component {
-
+    state = {
+        weather: [],
+    }
     static get properties() {
         return {
-            city: {type: Object},
+           
         };
     }
     
     constructor() {
         super();
-        this.city=[];
+        this.setState({weather: store1.getState().cities});
     }
     
     componentDidMount(){
@@ -20,16 +23,15 @@ export class Box extends Component {
     }
 
     render() {
-
         return (
-            
-            <div className="weather-card madrid">
+            <div>
+            <div className="weather-card">
                 <p>{this.props.city}</p>
-                <h1>{Math.round(this.props.temp)}ºC</h1>
-                
                 <div className="weather-icon">
-                    <img src={this.props.icon} alt="estou aqui"></img></div>
-                
+                    <img src={this.props.icon} alt="weather icon"></img></div>
+                <h1>{Math.round(this.props.temp)}ºC</h1>
+            </div> 
+            
             </div> 
         );
         
