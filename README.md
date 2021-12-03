@@ -12,5 +12,4 @@ You have two options in this app:
 
 Or
 
-2. 
-  Navigate to https://weather-app-jsa.herokuapp.com/
+2. Navigate to https://weather-app-jsa.herokuapp.com/
