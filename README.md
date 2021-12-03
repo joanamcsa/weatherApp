@@ -2,7 +2,6 @@
 
 You have two options in this app:
 
-1.
   1. Install NodeJs from NodeJs Official Page.
   2. Open Terminal
   3. Go to your file project
@@ -12,4 +11,4 @@ You have two options in this app:
 
 Or
 
-2. Navigate to https://weather-app-jsa.herokuapp.com/
+Navigate to https://weather-app-jsa.herokuapp.com/
