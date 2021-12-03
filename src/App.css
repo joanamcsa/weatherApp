@@ -1,50 +1,46 @@
 .App {
-  text-align: center;
+  	text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  	height: 40vmin;
+  	pointer-events: none;
 }
 
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
-/*  
 
-BOX COMPONENT'S CSS
-
-*/
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
 
 
 
 *, *:before, *:after {
-  box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
 }
 
 .allCards {
@@ -55,11 +51,12 @@ BOX COMPONENT'S CSS
     justify-content: center;
 }
 
-.smallCards{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+
+/*  
+
+BOX COMPONENT'S CSS
+
+*/
 .weather-wrapper {
     margin-top: 20px;
     display: flex;
@@ -69,7 +66,6 @@ BOX COMPONENT'S CSS
 }
 
 .weather-card {
-    
     margin:  20px 5px;
     border-radius: 20px;
     position: relative;
@@ -79,146 +75,171 @@ BOX COMPONENT'S CSS
     background-color: white;
     box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
 }
-.itemsList {
-    margin:  20px 5px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    width: 50%;
-    height: 50px;
-    background-color: white;
-    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
-}
-.weather-card-small {
-    
-  margin:  20px 5px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  width: 100px;
-  height: 150px;
-  background-color: white;
-  box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
-}
-    
 .weather-card h1 {
-    position: relative;
-    font-family: 'Lato', sans-serif;
-    font-weight:300;
-    font-size:325%;
-    color: #B8B8B8;
-    bottom: -125px;
-    text-align: center;
-}
-.weather-card-small h1{
-  position: relative;
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  font-size:15px;
-  color: #B8B8B8;
-  top: 65px;
-  text-align: center;
+	position: relative;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:325%;
+	color: #48484A;
+	bottom: -125px;
+	text-align: center;
 }
 
 .weather-card p {
-    position: relative;
-    font-family: 'Lato', sans-serif;
-    font-weight:300;
-    font-size:150%;
-    text-align:center;
-    color: #B8B8B8;
+	position: relative;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:150%;
+	text-align:center;
+	color: #48484A;
 }
-.weather-card-small p  {
-  position: relative;
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  font-size:15px;
-  text-align:center;
-  color: #B8B8B8;
-}
-
 
 .weather-icon {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    top: 40px;
-    margin: auto;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 40px;
+	margin: auto;
 }
 .weather-icon img {
-    width: 200px;
-    height: 200px;
+	width: 200px;
+	height: 200px;
 }
+
+/*  
+
+SMALL BOX COMPONENT'S CSS
+
+*/
+
+.smallCards{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.weather-card-small {
+	margin:  20px 5px;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	width: 100px;
+	height: 150px;
+	background-color: white;
+	box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+}
+.weather-card-small h1{
+	position: relative;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:15px;
+	color: #48484A;
+	top: 65px;
+	text-align: center;
+}
+
+
+.weather-card-small p  {
+	position: relative;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:15px;
+	text-align:center;
+	color: #48484A;
+}
+
 .weather-icon-small {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 20px;
-  margin: auto;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 20px;
+	margin: auto;
 }
 
 .weather-icon-small img {
-  width: 100px;
-  height: 100px;
+	width: 100px;
+	height: 100px;
+}
+
+/*  
+
+ITEM LIST COMPONENT'S CSS
+
+*/
+
+.itemsList {
+	margin:  20px 5px;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	width: 50%;
+	height: 50px;
+	background-color: white;
+	box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
 }
 
 .trash{
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  margin: auto;
+	position: absolute;
+	top: 8px;
+	right: 16px;
+	margin: auto;
 }
 
 .trash img {
-  width: 35px;
-  height: 35px;
+	width: 35px;
+	height: 35px;
 }
 
 .itemsList .temp {
-  position: absolute;
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  font-size:18px;
-  right:65px;
-  top:-5px;
-  color:#757575;
+	position: absolute;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:18px;
+	right:65px;
+	top:-5px;
+	color:#48484A;
 }
 .name {
-  position: absolute;
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  font-size:18px;
-  left:16px;
-  top:-5px;
-  color:#757575;
+	position: absolute;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:18px;
+	left:16px;
+	top:-5px;
+	color:#48484A;
 }
+/*  
+
+SEARCH BAR COMPONENT'S CSS
+
+*/
 
 
 .inputDiv {
-  margin: 20px 5px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  width: 50%;
-  height: 50px;
-  background-color: white;
-  box-shadow: 0px 0px 25px 1px rgb(50 50 50 / 10%);
+	margin: 20px 5px;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	width: 50%;
+	height: 50px;
+	background-color: white;
+	box-shadow: 0px 0px 25px 1px rgb(50 50 50 / 10%);
 }
 .inputDiv input {
-  position: absolute;
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  font-size:15px;
-  border: none;
-  color: #757575;
-  width: 90%;
-  height: 50px;
-  left: 16px;
+	position: absolute;
+	font-family: 'Lato', sans-serif;
+	font-weight:300;
+	font-size:15px;
+	border: none;
+	color: #48484A;
+	width: 90%;
+	height: 50px;
+	left: 16px;
 }
 .search-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	flex-direction: column;
 }
